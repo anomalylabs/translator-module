@@ -36,7 +36,7 @@ class TranslationFormSections
 
             $sections[$file]['fields'][] = $field->getField();
         }
-        
+
         $builder->setSections($sections);
     }
 }

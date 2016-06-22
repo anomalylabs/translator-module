@@ -1,6 +1,5 @@
 <?php namespace Anomaly\TranslatorModule\Translation\Form;
 
-use Anomaly\Streams\Platform\Addon\AddonCollection;
 use Anomaly\TranslatorModule\Translation\Command\GetTranslationKeys;
 use Illuminate\Contracts\Config\Repository;
 use Illuminate\Foundation\Bus\DispatchesJobs;
@@ -22,22 +21,19 @@ class TranslationFormFields
      * Handle the fields.
      *
      * @param TranslationFormBuilder $builder
-     * @param AddonCollection        $addons
      * @param Repository             $config
      */
-    public function handle(TranslationFormBuilder $builder, AddonCollection $addons, Repository $config)
+    public function handle(TranslationFormBuilder $builder, Repository $config)
     {
         $fields = [];
 
-        $addon = $addons->get($entry = $builder->getEntry());
-
-        $base = $this->dispatch(new GetTranslationKeys($addon, 'en'));
+        $base = $this->dispatch(new GetTranslationKeys($entry = $builder->getEntry(), 'en'));
 
         $translations = [];
 
         foreach ($config->get('streams::locales.enabled') as $locale) {
 
-            $translation = $this->dispatch(new GetTranslationKeys($addon, $locale));
+            $translation = $this->dispatch(new GetTranslationKeys($entry, $locale));
 
             foreach ($translation as $file => &$keys) {
 

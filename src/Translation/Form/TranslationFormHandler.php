@@ -33,11 +33,17 @@ class TranslationFormHandler
             );
         }
 
-        $addon = $addons->get($builder->getEntry());
+        $addon = $addons->get($entry = $builder->getEntry());
+
+        if ($addon) {
+            $path = $addon->getPath('resources/lang');
+        } else {
+            $path = base_path('vendor/anomaly/streams-platform/resources/lang');
+        }
 
         foreach ($translated as $locale => $translations) {
 
-            $directory = $addon->getPath('resources/lang/' . $locale);
+            $directory = $path . DIRECTORY_SEPARATOR . $locale;
 
             $files->makeDirectory($directory, 0755, true, true);
 

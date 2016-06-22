@@ -1,6 +1,6 @@
 <?php namespace Anomaly\TranslatorModule\Translation\Command;
 
-use Anomaly\Streams\Platform\Addon\Addon;
+use Anomaly\Streams\Platform\Addon\AddonCollection;
 use Illuminate\Contracts\Bus\SelfHandling;
 use Illuminate\Filesystem\Filesystem;
 use Symfony\Component\Finder\SplFileInfo;
@@ -45,13 +45,16 @@ class GetTranslationKeys implements SelfHandling
     /**
      * Handle the command.
      *
-     * @param Filesystem $files
+     * @param Filesystem      $files
+     * @param AddonCollection $addons
      * @return array
      */
-    public function handle(Filesystem $files)
+    public function handle(Filesystem $files, AddonCollection $addons)
     {
-        if ($this->source instanceof Addon) {
-            $directory = $this->source->getPath('resources/lang/' . $this->locale);
+        $addon = $addons->get($this->source);
+
+        if ($addon) {
+            $directory = $addon->getPath('resources/lang/' . $this->locale);
         } else {
             $directory = base_path('vendor/anomaly/streams-platform/resources/lang/' . $this->locale);
         }
