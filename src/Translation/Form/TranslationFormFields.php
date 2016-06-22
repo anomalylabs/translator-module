@@ -49,8 +49,10 @@ class TranslationFormFields
 
             foreach (array_dot($keys) as $key => $value) {
 
+                $parts = explode('.', $key);
+
                 $fields[basename($file, '.php') . '.' . $key] = [
-                    'label'        => $key,
+                    'label'        => ucwords(str_replace('_', ' ', implode(' > ', $parts))),
                     'translatable' => true,
                     'instructions' => '<strong>' . $value . '</strong>',
                     'config'       => [
