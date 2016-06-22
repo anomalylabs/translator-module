@@ -58,7 +58,8 @@ class TranslationFormFields
                     'translatable' => true,
                     'instructions' => '<strong>' . $value . '</strong>',
                     'config'       => [
-                        'file' => $file
+                        'file' => $file,
+                        'max'  => 999,
                     ],
                     'values'       => $translations[$file][$key],
                     'type'         => 'anomaly.field_type.text'

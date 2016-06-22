@@ -23,6 +23,10 @@ class AddonsController extends AdminController
      */
     public function index(AddonTableBuilder $table, $type = 'modules')
     {
+        if ($type == 'system') {
+            return $this->redirect->to('admin/translator/translate/system');
+        }
+
         return $table
             ->setType($type)
             ->render();

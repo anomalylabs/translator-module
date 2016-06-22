@@ -17,11 +17,11 @@ class GetTranslationKeys implements SelfHandling
 {
 
     /**
-     * The addon.
+     * The source to translate.
      *
-     * @var Addon
+     * @var mixed
      */
-    protected $addon;
+    protected $source;
 
     /**
      * The locale.
@@ -33,12 +33,12 @@ class GetTranslationKeys implements SelfHandling
     /**
      * Create a new GetTranslationKeys instance.
      *
-     * @param Addon  $addon
+     * @param mixed  $source
      * @param string $locale
      */
-    public function __construct(Addon $addon, $locale)
+    public function __construct($source, $locale)
     {
-        $this->addon  = $addon;
+        $this->source = $source;
         $this->locale = $locale;
     }
 
@@ -50,7 +50,11 @@ class GetTranslationKeys implements SelfHandling
      */
     public function handle(Filesystem $files)
     {
-        $directory = $this->addon->getPath('resources/lang/' . $this->locale);
+        if ($this->source instanceof Addon) {
+            $directory = $this->source->getPath('resources/lang/' . $this->locale);
+        } else {
+            $directory = base_path('vendor/anomaly/streams-platform/resources/lang/' . $this->locale);
+        }
 
         if (!is_dir($directory)) {
             return [];
