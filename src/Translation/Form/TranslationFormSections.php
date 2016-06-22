@@ -25,18 +25,18 @@ class TranslationFormSections
     {
         $sections = [];
 
-        foreach ($builder->getFields() as $field) {
+        foreach ($builder->getFormFields()->base() as $field) {
 
-            if (!isset($sections[$file = array_get($field, 'config.file')])) {
+            if (!isset($sections[$file = array_get($field->getConfig(), 'file')])) {
                 $sections[$file] = [
                     'title'   => $file,
                     'context' => 'info',
                 ];
             }
 
-            $sections[$file]['fields'][] = $field['field'];
+            $sections[$file]['fields'][] = $field->getField();
         }
-
+        
         $builder->setSections($sections);
     }
 }

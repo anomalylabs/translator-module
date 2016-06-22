@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'addon'    => [
+    'addon' => [
         'name' => 'Addon',
     ],
 ];

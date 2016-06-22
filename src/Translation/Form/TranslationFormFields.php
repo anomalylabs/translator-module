@@ -53,7 +53,7 @@ class TranslationFormFields
 
             foreach (array_dot($keys) as $key => $value) {
 
-                $fields[$key] = [
+                $fields[basename($file, '.php') . '.' . $key] = [
                     'label'        => $key,
                     'translatable' => true,
                     'instructions' => '<strong>' . $value . '</strong>',
