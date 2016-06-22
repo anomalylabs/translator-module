@@ -41,13 +41,15 @@ class TranslationFormHandler
 
             $files->makeDirectory($directory, 0755, true, true);
 
-            $require = [];
-
             foreach ($translations as $file => $keys) {
 
                 $require = [];
 
                 foreach ($keys as $key => $value) {
+
+                    if (empty($value)) {
+                        continue;
+                    }
 
                     $key = explode('.', $key);
 
