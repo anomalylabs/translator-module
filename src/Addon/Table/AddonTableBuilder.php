@@ -40,6 +40,11 @@ class AddonTableBuilder extends TableBuilder
         ],
     ];
 
+    protected $options = [
+        'title'       => 'module::message.instructions',
+        'description' => 'module::message.steps',
+    ];
+
     /**
      * Get the type.
      *
