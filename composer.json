@@ -1,0 +1,10 @@
+{
+    "name": "anomaly/translator-module",
+    "description": "Translator is a system and addons translation assistant.",
+    "type": "streams-addon",
+    "autoload": {
+        "psr-4": {
+            "Anomaly\\TranslatorModule\\": "src/"
+        }
+    }
+}
