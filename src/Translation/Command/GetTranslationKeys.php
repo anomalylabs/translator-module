@@ -67,10 +67,7 @@ class GetTranslationKeys implements SelfHandling
 
         /* @var SplFileInfo $file */
         foreach ($files->allFiles($directory) as $file) {
-            $keys[trim(
-                str_replace($directory, '', $file->getRealPath()),
-                DIRECTORY_SEPARATOR
-            )] = require $file->getRealPath();
+            $keys[$file->getFilename()] = require $file->getRealPath();
         }
 
         return $keys;

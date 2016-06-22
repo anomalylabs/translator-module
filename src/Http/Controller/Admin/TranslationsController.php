@@ -31,7 +31,7 @@ class TranslationsController extends PublicController
 
         $missing = [];
 
-        $en = $this->dispatch(new GetTranslationKeys($addon, 'en'));
+        $en = $this->dispatch(new GetTranslationKeys($addon->getNamespace(), 'en'));
 
         foreach ($config->get('streams::locales.enabled') as $locale) {
 
@@ -39,7 +39,7 @@ class TranslationsController extends PublicController
                 continue;
             }
 
-            $keys = $this->dispatch(new GetTranslationKeys($addon, $locale));
+            $keys = $this->dispatch(new GetTranslationKeys($addon->getNamespace(), $locale));
 
             $differences = array_diff_key(
                 array_dot($en),
@@ -71,9 +71,9 @@ class TranslationsController extends PublicController
 
         $missing = [];
 
-        $en = $this->dispatch(new GetTranslationKeys($addon, 'en'));
+        $en = $this->dispatch(new GetTranslationKeys($addon->getNamespace(), 'en'));
 
-        $keys = $this->dispatch(new GetTranslationKeys($addon, $locale));
+        $keys = $this->dispatch(new GetTranslationKeys($addon->getNamespace(), $locale));
 
         $differences = array_diff_key(
             array_dot($en),
