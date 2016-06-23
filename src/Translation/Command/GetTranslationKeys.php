@@ -1,6 +1,6 @@
 <?php namespace Anomaly\TranslatorModule\Translation\Command;
 
-use Anomaly\Streams\Platform\Addon\Addon;
+use Anomaly\Streams\Platform\Addon\AddonCollection;
 use Illuminate\Contracts\Bus\SelfHandling;
 use Illuminate\Filesystem\Filesystem;
 use Symfony\Component\Finder\SplFileInfo;
@@ -17,11 +17,11 @@ class GetTranslationKeys implements SelfHandling
 {
 
     /**
-     * The addon.
+     * The source to translate.
      *
-     * @var Addon
+     * @var mixed
      */
-    protected $addon;
+    protected $source;
 
     /**
      * The locale.
@@ -33,24 +33,31 @@ class GetTranslationKeys implements SelfHandling
     /**
      * Create a new GetTranslationKeys instance.
      *
-     * @param Addon  $addon
+     * @param mixed  $source
      * @param string $locale
      */
-    public function __construct(Addon $addon, $locale)
+    public function __construct($source, $locale)
     {
-        $this->addon  = $addon;
+        $this->source = $source;
         $this->locale = $locale;
     }
 
     /**
      * Handle the command.
      *
-     * @param Filesystem $files
+     * @param Filesystem      $files
+     * @param AddonCollection $addons
      * @return array
      */
-    public function handle(Filesystem $files)
+    public function handle(Filesystem $files, AddonCollection $addons)
     {
-        $directory = $this->addon->getPath('resources/lang/' . $this->locale);
+        $addon = $addons->get($this->source);
+
+        if ($addon) {
+            $directory = $addon->getPath('resources/lang/' . $this->locale);
+        } else {
+            $directory = base_path('vendor/anomaly/streams-platform/resources/lang/' . $this->locale);
+        }
 
         if (!is_dir($directory)) {
             return [];
@@ -60,10 +67,7 @@ class GetTranslationKeys implements SelfHandling
 
         /* @var SplFileInfo $file */
         foreach ($files->allFiles($directory) as $file) {
-            $keys[trim(
-                str_replace($directory, '', $file->getRealPath()),
-                DIRECTORY_SEPARATOR
-            )] = require $file->getRealPath();
+            $keys[$file->getFilename()] = require $file->getRealPath();
         }
 
         return $keys;

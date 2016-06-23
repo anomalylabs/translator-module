@@ -2,6 +2,24 @@
     "name": "anomaly/translator-module",
     "description": "Translator is a system and addons translation assistant.",
     "type": "streams-addon",
+    "keywords": [
+        "translator",
+        "laravel",
+        "multilingual"
+    ],
+    "homepage": "http://pyrocms.com/",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "PyroCMS, Inc.",
+            "email": "support@pyrocms.com",
+            "homepage": "http://pyrocms.com/",
+            "role": "Owner"
+        }
+    ],
+    "support": {
+        "email": "ryan@pyrocms.com"
+    },
     "autoload": {
         "psr-4": {
             "Anomaly\\TranslatorModule\\": "src/"

@@ -23,6 +23,7 @@ class TranslatorModule extends Module
         'plugins',
         'extensions',
         'field_types',
+        'system',
     ];
 
 }

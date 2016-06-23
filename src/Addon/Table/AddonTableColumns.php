@@ -41,7 +41,9 @@ class AddonTableColumns implements SelfHandling
                     'heading' => 'Completion',
                     'value'   => function (Addon $entry) use ($config, $translator) {
 
-                        $en = count(array_flatten($this->dispatch(new GetTranslationKeys($entry, 'en'))));
+                        $en = count(
+                            array_flatten($this->dispatch(new GetTranslationKeys($entry->getNamespace(), 'en')))
+                        );
 
                         $locales = [];
 
@@ -52,7 +54,7 @@ class AddonTableColumns implements SelfHandling
                             }
 
                             $locales[$locale] = count(
-                                array_flatten($this->dispatch(new GetTranslationKeys($entry, $locale)))
+                                array_flatten($this->dispatch(new GetTranslationKeys($entry->getNamespace(), $locale)))
                             );
                         }
 

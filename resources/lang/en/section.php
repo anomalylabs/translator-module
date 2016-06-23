@@ -1,19 +1,25 @@
 <?php
 
 return [
-    'modules'     => [
+    'instructions' => [
+        'title' => 'Instructions',
+    ],
+    'system'       => [
+        'title' => 'System',
+    ],
+    'modules'      => [
         'title' => 'Modules',
     ],
-    'themes'      => [
+    'themes'       => [
         'title' => 'Themes',
     ],
-    'plugins'     => [
+    'plugins'      => [
         'title' => 'Plugins',
     ],
-    'extensions'  => [
+    'extensions'   => [
         'title' => 'Extensions',
     ],
-    'field_types' => [
+    'field_types'  => [
         'title' => 'Field Types',
     ],
 ];
