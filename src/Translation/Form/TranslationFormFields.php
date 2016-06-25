@@ -60,7 +60,7 @@ class TranslationFormFields
                         'max'  => 999,
                     ],
                     'values'       => $translations[$file][$key],
-                    'type'         => 'anomaly.field_type.text'
+                    'type'         => 'anomaly.field_type.textarea'
                 ];
             }
         }
