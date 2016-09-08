@@ -57,11 +57,11 @@ class TranslationFormHandler
                         continue;
                     }
 
-                    $key = explode('.', $key);
+                    $key = explode('_', $key);
 
                     array_shift($key);
 
-                    $key = implode('.', $key);
+                    $key = implode('_', $key);
 
                     array_set($require, $key, $value);
                 }
