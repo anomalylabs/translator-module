@@ -28,9 +28,10 @@ class TranslationFormHandler
 
         /* @var FieldType $field */
         foreach ($builder->getFormFields()->enabled() as $field) {
-            $translated[$field->getLocale()][$field->getConfig()['file']][$field->getField()] = $builder->getFormValue(
-                $field->getInputName()
-            );
+            $translated[$field->getLocale()][$field->getConfig()['file']][$field->getField()] = $_POST[
+                str_replace('.', '_',$field->getInputName())
+            ];
+            // $builder->getFormValue($field->getInputName()); // work fine if the array in language file not nested
         }
 
         $addon = $addons->get($entry = $builder->getEntry());
