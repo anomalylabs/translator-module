@@ -1,6 +1,6 @@
 <?php
 
 return [
-    'translate' => 'Traduzione',
+    'translate'  => 'Traduzione',
     'difference' => 'Differenze',
 ];

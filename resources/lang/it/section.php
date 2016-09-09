@@ -4,22 +4,22 @@ return [
     'instructions' => [
         'title' => 'Istruzioni',
     ],
-    'system' => [
+    'system'       => [
         'title' => 'Sistema',
     ],
-    'modules' => [
+    'modules'      => [
         'title' => 'Moduli',
     ],
-    'themes' => [
+    'themes'       => [
         'title' => 'Temi',
     ],
-    'plugins' => [
+    'plugins'      => [
         'title' => 'Plugin',
     ],
-    'extensions' => [
+    'extensions'   => [
         'title' => 'Estensioni',
     ],
-    'field_types' => [
+    'field_types'  => [
         'title' => 'Field Types',
     ],
 ];

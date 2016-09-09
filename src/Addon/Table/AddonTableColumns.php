@@ -2,7 +2,6 @@
 
 use Anomaly\Streams\Platform\Addon\Addon;
 use Anomaly\TranslatorModule\Translation\Command\GetTranslationKeys;
-use Illuminate\Contracts\Bus\SelfHandling;
 use Illuminate\Contracts\Config\Repository;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Translation\Translator;
@@ -15,7 +14,7 @@ use Illuminate\Translation\Translator;
  * @author        Ryan Thompson <ryan@pyrocms.com>
  * @package       Anomaly\TranslatorModule\Addon\Table
  */
-class AddonTableColumns implements SelfHandling
+class AddonTableColumns
 {
 
     use DispatchesJobs;
@@ -35,7 +34,7 @@ class AddonTableColumns implements SelfHandling
                     'value'   => [
                         'title'       => 'entry.title',
                         'description' => 'entry.description',
-                    ]
+                    ],
                 ],
                 [
                     'heading' => 'Completion',
@@ -83,7 +82,7 @@ class AddonTableColumns implements SelfHandling
                                 array_keys($locales)
                             )
                         );
-                    }
+                    },
 
                 ],
             ]

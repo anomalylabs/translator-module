@@ -1,6 +1,5 @@
 <?php namespace Anomaly\TranslatorModule\Translation\Form;
 
-use Illuminate\Contracts\Config\Repository;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 
 /**

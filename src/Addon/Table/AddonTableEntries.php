@@ -1,7 +1,7 @@
 <?php namespace Anomaly\TranslatorModule\Addon\Table;
 
 use Anomaly\Streams\Platform\Addon\AddonCollection;
-use Illuminate\Contracts\Bus\SelfHandling;
+
 
 /**
  * Class AddonTableEntries
@@ -11,7 +11,7 @@ use Illuminate\Contracts\Bus\SelfHandling;
  * @author        Ryan Thompson <ryan@pyrocms.com>
  * @package       Anomaly\TranslatorModule\Addon\Table
  */
-class AddonTableEntries implements SelfHandling
+class AddonTableEntries
 {
 
     /**

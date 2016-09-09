@@ -4,22 +4,22 @@ return [
     'instructions' => [
         'title' => 'التعليمات',
     ],
-    'system' => [
+    'system'       => [
         'title' => 'النظام',
     ],
-    'modules' => [
+    'modules'      => [
         'title' => 'الوحدات',
     ],
-    'themes' => [
+    'themes'       => [
         'title' => 'السمات',
     ],
-    'plugins' => [
+    'plugins'      => [
         'title' => 'الملحقات',
     ],
-    'extensions' => [
+    'extensions'   => [
         'title' => 'المركبات',
     ],
-    'field_types' => [
+    'field_types'  => [
         'title' => 'أتواع الحقول',
     ],
 ];

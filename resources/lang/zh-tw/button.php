@@ -1,6 +1,6 @@
 <?php
 
 return [
-    'translate' => '翻譯',
-    'difference' => '差異'
+    'translate'  => '翻譯',
+    'difference' => '差異',
 ];

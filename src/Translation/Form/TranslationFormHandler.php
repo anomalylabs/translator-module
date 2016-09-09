@@ -29,7 +29,7 @@ class TranslationFormHandler
         /* @var FieldType $field */
         foreach ($builder->getFormFields()->enabled() as $field) {
             $translated[$field->getLocale()][$field->getConfig()['file']][$field->getField()] = $builder->getPostValue(
-                str_replace('.', '_',$field->getInputName())
+                str_replace('.', '_', $field->getInputName())
             );
             // $builder->getFormValue($field->getInputName()); // work fine if the array in language file not nested
         }

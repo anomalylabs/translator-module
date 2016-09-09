@@ -1,7 +1,6 @@
 <?php namespace Anomaly\TranslatorModule\Translation\Command;
 
 use Anomaly\Streams\Platform\Addon\AddonCollection;
-use Illuminate\Contracts\Bus\SelfHandling;
 use Illuminate\Filesystem\Filesystem;
 use Symfony\Component\Finder\SplFileInfo;
 
@@ -13,7 +12,7 @@ use Symfony\Component\Finder\SplFileInfo;
  * @author        Ryan Thompson <ryan@pyrocms.com>
  * @package       Anomaly\TranslatorModule\Translation\Command
  */
-class GetTranslationKeys implements SelfHandling
+class GetTranslationKeys
 {
 
     /**

@@ -1,6 +1,6 @@
 <?php
 
 return [
-    'translate' => 'Fordít',
+    'translate'  => 'Fordít',
     'difference' => 'Különbségek',
 ];

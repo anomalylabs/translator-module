@@ -2,24 +2,24 @@
 
 return [
     'instructions' => [
-        'title' => '說明'
+        'title' => '說明',
     ],
-    'system' => [
-        'title' => '系統'
+    'system'       => [
+        'title' => '系統',
     ],
-    'modules' => [
-        'title' => '模組'
+    'modules'      => [
+        'title' => '模組',
     ],
-    'themes' => [
-        'title' => '佈景'
+    'themes'       => [
+        'title' => '佈景',
     ],
-    'plugins' => [
-        'title' => '外掛'
+    'plugins'      => [
+        'title' => '外掛',
     ],
-    'extensions' => [
-        'title' => '擴充'
+    'extensions'   => [
+        'title' => '擴充',
     ],
-    'field_types' => [
-        'title' => '欄位型別'
-    ]
+    'field_types'  => [
+        'title' => '欄位型別',
+    ],
 ];

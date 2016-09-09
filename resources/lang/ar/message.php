@@ -1,10 +1,10 @@
 <?php
 
 return [
-    'difference' => 'الاختلاف',
+    'difference'   => 'الاختلاف',
     'translations' => 'الترجمات',
     'instructions' => 'التعليمات',
-    'steps' => '
+    'steps'        => '
     		<br>
     		<strong>الخطوة 1</strong>: تمكين اللغة التي ترغب في ترجمتها من <a href="/admin/settings"> الإعدادات > النظام.</a><br>
 			<strong>الخطوة 2</strong>: استعرض وترجم الملحقات أو النظام كما تريد. الترجمات يتم حفظها ضمن مجلد الاضافة!<br>

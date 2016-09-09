@@ -50,7 +50,7 @@ class TranslationFormFields
             foreach (array_dot($keys) as $key => $value) {
 
                 $parts = explode('.', $key);
-                
+
                 $value = is_array($value) ? implode(' ', $value) : $value;
 
                 $fields[basename($file, '.php') . '_' . $key] = [
@@ -62,7 +62,7 @@ class TranslationFormFields
                         'max'  => 999,
                     ],
                     'values'       => $translations[$file][$key],
-                    'type'         => 'anomaly.field_type.textarea'
+                    'type'         => 'anomaly.field_type.textarea',
                 ];
             }
         }

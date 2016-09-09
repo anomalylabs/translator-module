@@ -4,22 +4,22 @@ return [
     'instructions' => [
         'title' => 'Utasítások',
     ],
-    'system' => [
+    'system'       => [
         'title' => 'Rendszer',
     ],
-    'modules' => [
+    'modules'      => [
         'title' => 'Modulok',
     ],
-    'themes' => [
+    'themes'       => [
         'title' => 'Témák',
     ],
-    'plugins' => [
+    'plugins'      => [
         'title' => 'Beépülők',
     ],
-    'extensions' => [
+    'extensions'   => [
         'title' => 'Kiterjesztések',
     ],
-    'field_types' => [
+    'field_types'  => [
         'title' => 'Mező Típusok',
     ],
 ];
