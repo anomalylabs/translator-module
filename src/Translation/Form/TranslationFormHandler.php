@@ -3,6 +3,7 @@
 use Anomaly\Streams\Platform\Addon\AddonCollection;
 use Anomaly\Streams\Platform\Addon\FieldType\FieldType;
 use Illuminate\Filesystem\Filesystem;
+use Illuminate\Http\Request;
 
 /**
  * Class TranslationFormHandler
@@ -22,15 +23,15 @@ class TranslationFormHandler
      * @param AddonCollection        $addons
      * @param Filesystem             $files
      */
-    public function handle(TranslationFormBuilder $builder, AddonCollection $addons, Filesystem $files)
+    public function handle(TranslationFormBuilder $builder, AddonCollection $addons, Filesystem $files, Request $request)
     {
         $translated = [];
 
         /* @var FieldType $field */
         foreach ($builder->getFormFields()->enabled() as $field) {
-            $translated[$field->getLocale()][$field->getConfig()['file']][$field->getField()] = $_POST[
+            $translated[$field->getLocale()][$field->getConfig()['file']][$field->getField()] = $request->input(
                 str_replace('.', '_',$field->getInputName())
-            ];
+            );
             // $builder->getFormValue($field->getInputName()); // work fine if the array in language file not nested
         }
 
