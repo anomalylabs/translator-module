@@ -61,7 +61,7 @@ class TranslationFormFields
                         'file' => $file,
                         'max'  => 999,
                     ],
-                    'values'       => $translations[$file][$key],
+                    'values'       =>  array_get(array_get($translations, $file), $key),
                     'type'         => 'anomaly.field_type.textarea',
                 ];
             }
