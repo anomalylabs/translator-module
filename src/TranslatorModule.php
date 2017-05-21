@@ -2,6 +2,13 @@
 
 use Anomaly\Streams\Platform\Addon\Module\Module;
 
+/**
+ * Class TranslatorModule
+ *
+ * @link   http://pyrocms.com/
+ * @author PyroCMS, Inc. <support@pyrocms.com>
+ * @author Ryan Thompson <ryan@pyrocms.com>
+ */
 class TranslatorModule extends Module
 {
 
@@ -10,7 +17,7 @@ class TranslatorModule extends Module
      *
      * @var string
      */
-    protected $icon = 'addon';
+    protected $icon = 'fa fa-language';
 
     /**
      * The module sections.
