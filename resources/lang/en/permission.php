@@ -4,8 +4,8 @@ return [
 	'translations'  => [
 		'name'   => 'Translations',
 		'option' => [
-			'write'  => 'Read',
-			'read'   => 'Write',
+			'write'  => 'Write',
+			'read'   => 'Read',
 			'delete' => 'Delete',
 		],
 	]
