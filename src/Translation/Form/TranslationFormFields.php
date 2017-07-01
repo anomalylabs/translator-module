@@ -40,7 +40,7 @@ class TranslationFormFields
                 $keys = array_dot($keys);
 
                 foreach ($keys as $key => $value) {
-                    $translations[$file][$key][$locale] = $value;
+                    $translations[$file][$key][$locale] = html_entity_decode($value, ENT_QUOTES);
                 }
             }
         }
