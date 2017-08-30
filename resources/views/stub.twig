@@ -4,7 +4,7 @@
             '{{ key }}' => [
             {{ _self.macro(value) }}    ],
         {% else %}
-            '{{ key }}' => '{{ value|raw }}',
+            '{{ key }}' => '{{ value|e }}',
         {% endif %}
     {% endfor %}
 {% endmacro %}
