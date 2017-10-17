@@ -1,8 +1,9 @@
 {% macro macro(keys) %}
+    {% import _self as do %}
     {% for key, value in keys %}
         {% if value is iterable %}
             '{{ key }}' => [
-            {{ _self.macro(value) }}    ],
+            {{ do.macro(value) }}    ],
         {% else %}
             '{{ key }}' => '{{ value|e }}',
         {% endif %}
