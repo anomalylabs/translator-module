@@ -1,15 +1,15 @@
 {% macro macro(keys) %}
     {% for key, value in keys %}
         {% if value is iterable %}
-            '{{ key }}' => [
-            {{ _self.macro(value) }}    ],
+    '{{ key }}' => [
+        {{ _self.macro(value) }}
+    ],
         {% else %}
-            '{{ key }}' => '{{ value|e }}',
+    '{{ key }}' => '{{ value|e }}',
         {% endif %}
     {% endfor %}
 {% endmacro %}
 
 {% import _self as do %}
 
-return [
-{{ do.macro(require) }}];
+return [{{ do.macro(require) }}];
