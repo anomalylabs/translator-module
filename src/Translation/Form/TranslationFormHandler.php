@@ -19,8 +19,8 @@ class TranslationFormHandler
      * Handle the form.
      *
      * @param TranslationFormBuilder $builder
-     * @param AddonCollection        $addons
-     * @param Filesystem             $files
+     * @param AddonCollection $addons
+     * @param Filesystem $files
      */
     public function handle(TranslationFormBuilder $builder, AddonCollection $addons, Filesystem $files)
     {
@@ -67,9 +67,9 @@ class TranslationFormHandler
                     array_set($require, $key, $value);
                 }
 
-                $require = view('module::stub', compact('require'))->render();
+                $require = view('anomaly.module.translator::stub', compact('require', 'locale'))->render();
 
-                $files->put($directory . DIRECTORY_SEPARATOR . $file, '<?php' . $require);
+                $files->put($directory . DIRECTORY_SEPARATOR . $file, "<?php\n{$require}");
             }
         }
     }
