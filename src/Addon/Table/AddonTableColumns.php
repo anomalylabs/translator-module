@@ -66,18 +66,18 @@ class AddonTableColumns
                                     $percent = $count / $en;
 
                                     if ($percent > 1) {
-                                        $label = 'default';
+                                        $class = 'default';
                                     } elseif ($percent == 0) {
-                                        $label = 'danger';
+                                        $class = 'danger';
                                     } elseif ($percent == 1) {
-                                        $label = 'success';
+                                        $class = 'success';
                                     } elseif ($percent < 0.70) {
-                                        $label = 'warning';
+                                        $class = 'warning';
                                     } else {
-                                        $label = 'info';
+                                        $class = 'info';
                                     }
 
-                                    return '<span class="label label-' . $label . '"> ' . $locale . ' ' . $count . '/' . $en . '</span>';
+                                    return '<span class="tag tag-' . $class . '"> ' . $locale . ' ' . $count . '/' . $en . '</span>';
                                 },
                                 array_keys($locales)
                             )

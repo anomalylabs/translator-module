@@ -5,7 +5,7 @@
     {% for key, value in keys %}
         {% if value is iterable %}
     '{{ key }}' => [
-        {{ _self.macro(value) }}
+        {{ self.macro(value) }}
     ],
         {% else %}
     '{{ key }}' => '{{ value|e }}',
