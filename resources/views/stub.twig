@@ -10,6 +10,4 @@
     {% endfor %}
 {% endmacro %}
 
-{% import _self as do %}
-
-return [{{ do.macro(require) }}];
+return [{{ _self.macro(require) }}];
