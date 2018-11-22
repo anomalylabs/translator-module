@@ -58,6 +58,8 @@ class TranslationFormHandler
                         continue;
                     }
 
+                    $value = str_replace("'", "\'", $value);
+
                     $key = explode('_', $key);
 
                     array_shift($key);
